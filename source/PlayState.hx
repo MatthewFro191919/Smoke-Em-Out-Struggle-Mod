@@ -2591,15 +2591,21 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if (dad.curCharacter == 'garcelloghosty' && SONG.song.toLowerCase() == 'fading')
+		if (dad.curCharacter == 'garcelloghosty' && boyfriend.curCharacter == 'bfdead' && SONG.song.toLowerCase() == 'fading')
 		{
 			if (curStep == 240)
 			{
 				new FlxTimer().start(0.1, function(tmr:FlxTimer)
 				{
+					boyfriend.alpha -= 0.05;
+					iconP1.alpha -= 0.05;
 					dad.alpha -= 0.05;
 					iconP2.alpha -= 0.05;
 
+					if (boyfriend.alpha > 0)
+					{
+						tmr.reset(0.1);
+					}
 					if (dad.alpha > 0)
 					{
 						tmr.reset(0.1);

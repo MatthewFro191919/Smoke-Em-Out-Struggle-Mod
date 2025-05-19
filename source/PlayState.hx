@@ -667,6 +667,14 @@ class PlayState extends MusicBeatState
 				gfVersion = 'gf-pixel';
 		}
 
+		switch (SONG.player1)
+		{
+			default:
+				gfVersion = 'gf';
+			case 'bfdead':
+				gfVersion = 'gfsad';
+		}
+
 		if (curStage == 'limo')
 			gfVersion = 'gf-car';
 
